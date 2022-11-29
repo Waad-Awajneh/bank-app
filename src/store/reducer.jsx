@@ -16,9 +16,17 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
-  const newState = { ...state };
+  // const newState = { ...state };
+  switch (action.type) {
+    case "addAccount":
+      console.log(action);
+      return {
+        ...state,
+        accounts: [...state.accounts, action.value],
+      };
+  }
 
-  return newState;
+  return state;
 };
 
 export default reducer;
