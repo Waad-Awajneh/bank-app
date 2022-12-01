@@ -1,11 +1,8 @@
-import React, { Component } from "react";
-
-import { connect } from "react-redux";
 import { Table } from "@mantine/core";
 import Form from "./Form";
 import { useSelector, useDispatch } from "react-redux";
 
-import { accountsSlice, delAccount, addAccount } from "../store/reducer";
+import { delAccount } from "../store/reducer";
 
 function Main() {
   const accounts = useSelector((state) => state.accounts.accounts);

@@ -1,9 +1,6 @@
-import React, { useState } from "react";
-
-import { connect } from "react-redux";
 import { useSelector, useDispatch } from "react-redux";
 
-import { accountsSlice, delAccount, addAccount } from "../store/reducer";
+import { addAccount } from "../store/reducer";
 
 let test = { id: 0, customerName: "", accountNumber: "", accountType: "" };
 function Form() {

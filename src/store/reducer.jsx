@@ -17,32 +17,6 @@ const initialState = {
   numberOfAccounts: 2,
 };
 
-// const reducer = (state = initialState, action) => {
-//   // const newState = { ...state };
-//   switch (action.type) {
-//     case "addAccount":
-//       return {
-//         ...state,
-//         accounts: [...state.accounts, action.value],
-//         numberOfAccounts: state.numberOfAccounts + 1,
-//       };
-
-//     case "delAccount":
-//       let newArr = state.accounts.filter((ele) => {
-//         return ele.id != action.value;
-//       });
-//       return {
-//         ...state,
-//         accounts: newArr,
-//         numberOfAccounts: state.numberOfAccounts - 1,
-//       };
-//   }
-
-//   return state;
-// };
-
-// export default reducer;
-
 export const accountsSlice = createSlice({
   name: "Accounts",
   initialState,
