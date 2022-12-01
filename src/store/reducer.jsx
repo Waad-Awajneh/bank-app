@@ -1,3 +1,4 @@
+import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   accounts: [
     {
@@ -13,20 +14,55 @@ const initialState = {
       accountType: "Student accounts",
     },
   ],
+  numberOfAccounts: 2,
 };
 
-const reducer = (state = initialState, action) => {
-  // const newState = { ...state };
-  switch (action.type) {
-    case "addAccount":
-      console.log(action);
-      return {
-        ...state,
-        accounts: [...state.accounts, action.value],
-      };
-  }
+// const reducer = (state = initialState, action) => {
+//   // const newState = { ...state };
+//   switch (action.type) {
+//     case "addAccount":
+//       return {
+//         ...state,
+//         accounts: [...state.accounts, action.value],
+//         numberOfAccounts: state.numberOfAccounts + 1,
+//       };
 
-  return state;
-};
+//     case "delAccount":
+//       let newArr = state.accounts.filter((ele) => {
+//         return ele.id != action.value;
+//       });
+//       return {
+//         ...state,
+//         accounts: newArr,
+//         numberOfAccounts: state.numberOfAccounts - 1,
+//       };
+//   }
 
-export default reducer;
+//   return state;
+// };
+
+// export default reducer;
+
+export const accountsSlice = createSlice({
+  name: "Accounts",
+  initialState,
+  reducers: {
+    addAccount: (state, action) => {
+      state.accounts.push(action.payload);
+      state.numberOfAccounts += 1;
+    },
+    delAccount: (state, action) => {
+      console.log(action.payload);
+      state.numberOfAccounts -= 1;
+
+      state.accounts = state.accounts.filter((ele) => {
+        return ele.id != action.payload;
+      });
+    },
+  },
+});
+
+// Action creators are generated for each case reducer function
+export const { addAccount, delAccount } = accountsSlice.actions;
+
+export default accountsSlice.reducer;

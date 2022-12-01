@@ -4,16 +4,15 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import reducer from "./store/reducer";
+import store from "./store/store";
 
 import { Provider } from "react-redux";
-import { createStore } from "redux";
+
 import { Home } from "./components/Home";
 import { MantineProvider } from "@mantine/core";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter } from "react-router-dom";
-
-const store = createStore(reducer);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

@@ -5,9 +5,9 @@ import Main from "./Main";
 export const Home = () => {
   return (
     <>
-      <Header />{" "}
+      <Header />
       <div style={{ height: "60vh" }}>
-        <Main />{" "}
+        <Main />
       </div>
       <Footer />
     </>
